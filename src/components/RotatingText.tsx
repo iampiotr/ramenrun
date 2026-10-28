@@ -25,8 +25,10 @@ function Phrase({ text, active }: { text: string; active: boolean }) {
           </span>
         </span>
         <span
-          className={`absolute inset-x-0 -bottom-1 h-2 origin-left rounded-full bg-white transition-transform duration-700 ease-out motion-reduce:transition-none ${
-            active ? 'scale-x-100 delay-500' : 'scale-x-0'
+          className={`absolute inset-x-0 -bottom-1 h-2 origin-left rounded-full bg-[#ff2d2d] ${
+            active
+              ? 'animate-underline motion-reduce:animate-none motion-reduce:scale-x-100'
+              : 'scale-x-0'
           }`}
         />
       </span>
