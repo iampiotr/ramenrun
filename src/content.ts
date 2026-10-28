@@ -17,7 +17,7 @@ export const nav = [
 
 export const hero = {
   titleTop: 'One packet.',
-  titleRotating: ['One full belly.', 'One day in school.', '*Endless* potential.'],
+  titleRotating: ['One full belly.', 'One day in school.', '*Endless* _potential_.'],
   body: 'Kids in rural Cambodian villages often go to school hungry. Your donation buys ramen packets that I hand-deliver to families who need them most.',
   image: photo('hero_ramen.png'),
   imageAlt: 'A fork lifting noodles from a cup of ramen',
