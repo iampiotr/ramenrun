@@ -19,8 +19,8 @@ export const hero = {
   titleTop: 'One packet.',
   titleRotating: ['One full belly.', 'One day in school.', '*Endless* potential.'],
   body: 'Kids in rural Cambodian villages often go to school hungry. Your donation buys ramen packets that I hand-deliver to families who need them most.',
-  image: photo('hero.svg'),
-  imageAlt: 'Children in a village near Siem Reap holding packets of ramen',
+  image: photo('hero_ramen.png'),
+  imageAlt: 'A fork lifting noodles from a cup of ramen',
 }
 
 export const cause = {
