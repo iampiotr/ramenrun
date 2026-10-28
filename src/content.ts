@@ -1,3 +1,5 @@
+const photo = (file: string) => `${import.meta.env.BASE_URL}photos/siem-reap/${file}`
+
 export const site = {
   name: "Brandon's Ramen Run",
   owner: "Brandon's",
@@ -17,7 +19,7 @@ export const hero = {
   titleTop: 'One packet.',
   titleRotating: ['One full belly.', 'One day in school.', '*Endless* potential.'],
   body: 'Kids in rural Cambodian villages often go to school hungry. Your donation buys ramen packets that I hand-deliver to families who need them most.',
-  image: '/photos/siem-reap/hero.svg',
+  image: photo('hero.svg'),
   imageAlt: 'Children in a village near Siem Reap holding packets of ramen',
 }
 
@@ -33,7 +35,7 @@ export const cause = {
     text: 'children under five in Cambodia are stunted from chronic undernutrition.',
     source: 'Cambodia Demographic and Health Survey 2021-22',
   },
-  image: '/photos/siem-reap/village.svg',
+  image: photo('village.svg'),
   imageAlt: 'A dirt road leading into a rural village outside Siem Reap',
 }
 
@@ -65,7 +67,7 @@ export const bio = {
   eyebrow: 'About Brandon',
   name: 'Brandon',
   role: "Founder, Brandon's Ramen Run",
-  photo: '/photos/siem-reap/portrait.png',
+  photo: photo('portrait.png'),
   photoAlt: "Portrait of Brandon, founder of Brandon's Ramen Run",
   quote: 'I saw kids sharing one bowl between four. I knew I could do something.',
   paragraphs: [
@@ -90,56 +92,56 @@ export const gallery = {
   intro: 'Snapshots from our most recent delivery run around Siem Reap. Tap any photo to see it larger.',
   photos: [
     {
-      src: '/photos/siem-reap/01.svg',
+      src: photo('01.svg'),
       alt: 'Cases of ramen stacked in the back of a truck',
       caption: 'Loading up at the market',
       width: 800,
       height: 1000,
     },
     {
-      src: '/photos/siem-reap/02.svg',
+      src: photo('02.svg'),
       alt: 'Kids lining up to receive ramen packets',
       caption: 'The line forms fast',
       width: 1200,
       height: 800,
     },
     {
-      src: '/photos/siem-reap/03.svg',
+      src: photo('03.svg'),
       alt: 'A girl smiling while holding two ramen packets',
       caption: 'Two packets, one big smile',
       width: 800,
       height: 800,
     },
     {
-      src: '/photos/siem-reap/04.svg',
+      src: photo('04.svg'),
       alt: 'A village chief helping hand out food',
       caption: 'Working with the village chief',
       width: 1200,
       height: 800,
     },
     {
-      src: '/photos/siem-reap/05.svg',
+      src: photo('05.svg'),
       alt: 'A family cooking ramen over a small fire',
       caption: 'Dinner is served',
       width: 800,
       height: 1000,
     },
     {
-      src: '/photos/siem-reap/06.svg',
+      src: photo('06.svg'),
       alt: 'A rural road through rice paddies outside Siem Reap',
       caption: 'On the road to the next village',
       width: 1200,
       height: 800,
     },
     {
-      src: '/photos/siem-reap/07.svg',
+      src: photo('07.svg'),
       alt: 'A group of kids waving at the camera',
       caption: 'Thank you from the kids!',
       width: 800,
       height: 800,
     },
     {
-      src: '/photos/siem-reap/08.svg',
+      src: photo('08.svg'),
       alt: 'Empty boxes after a delivery day',
       caption: 'Every box, delivered',
       width: 800,
