@@ -153,7 +153,7 @@ export function GiftCalculator() {
                 <div className="overflow-hidden" inert={!open}>
                   {status === 'sent' ? (
                     <p className="pt-8 text-center text-lg font-semibold" role="status">
-                      Pledge sent. We'll reply at {email.trim()}.
+                      Pledge sent. I'll follow up shortly at {email.trim()}.
                     </p>
                   ) : (
                     <form className="space-y-4 pt-8" onSubmit={sendPledge}>
