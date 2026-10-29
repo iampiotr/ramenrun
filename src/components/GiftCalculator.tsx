@@ -12,35 +12,69 @@ import {
   isDonateLive,
 } from '../config'
 
-function pledgeMailto(email: string, amount: number, packets: number) {
-  const subject = `Donation pledge — $${amount}`
-  const body = [
-    `I want to pledge $${amount} (${packets} packets of ramen).`,
-    '',
-    `My email: ${email}`,
-  ].join('\n')
-  return `mailto:${PLEDGE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+type PledgeStatus = 'idle' | 'sending' | 'sent' | 'error'
+
+type PledgeResponse = {
+  ok?: boolean
+  error?: { message?: string }
+}
+
+async function sendPledgeEmail(email: string, amount: number, packets: number) {
+  const response = await fetch(`https://sendm8.com/f/${encodeURIComponent(PLEDGE_EMAIL)}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify({
+      _subject: `Donation pledge — $${amount}`,
+      _replyto: email,
+      email,
+      pledge: `$${amount}`,
+      packets: String(packets),
+      message: `I want to pledge $${amount} (${packets} packets of ramen).\n\nMy email: ${email}`,
+    }),
+  })
+  const result = (await response.json()) as PledgeResponse
+  if (!response.ok || !result.ok) {
+    throw new Error(result.error?.message || 'Could not send the pledge. Please try again.')
+  }
 }
 
 export function GiftCalculator() {
   const { open, openPledge } = usePledge()
   const [amount, setAmount] = useState(GIFT_AMOUNTS_USD[1])
   const [email, setEmail] = useState('')
+  const [status, setStatus] = useState<PledgeStatus>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
   const emailRef = useRef<HTMLInputElement>(null)
   const packets = Math.floor(amount / COST_PER_PACKET_USD)
 
   useEffect(() => {
-    if (open) emailRef.current?.focus()
-  }, [open])
+    if (open && status !== 'sent') emailRef.current?.focus()
+  }, [open, status])
 
-  function sendPledge(event: FormEvent<HTMLFormElement>) {
+  async function sendPledge(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const address = email.trim()
     if (!emailRef.current?.checkValidity()) {
       emailRef.current?.reportValidity()
       return
     }
-    window.location.href = pledgeMailto(address, amount, packets)
+    setStatus('sending')
+    setErrorMessage('')
+    try {
+      await sendPledgeEmail(address, amount, packets)
+      setStatus('sent')
+    } catch (error) {
+      const message = error instanceof Error ? error.message : ''
+      setStatus('error')
+      setErrorMessage(
+        message && !/fetch|network/i.test(message)
+          ? message
+          : 'Could not send the pledge. Please try again.',
+      )
+    }
   }
 
   return (
@@ -117,32 +151,47 @@ export function GiftCalculator() {
                 }`}
               >
                 <div className="overflow-hidden" inert={!open}>
-                  <form className="space-y-4 pt-8" onSubmit={sendPledge}>
-                    <div>
-                      <label htmlFor="pledge-email" className="mb-2 block text-sm font-semibold">
-                        Your email
-                      </label>
-                      <input
-                        ref={emailRef}
-                        id="pledge-email"
-                        name="email"
-                        type="email"
-                        required
-                        autoComplete="email"
-                        value={email}
-                        onChange={(event) => setEmail(event.target.value)}
-                        placeholder="you@example.com"
-                        className="w-full rounded-full border-2 border-ink/15 px-5 py-3 outline-none focus:border-brand"
-                      />
-                    </div>
-                    <p className="text-sm font-semibold">
-                      Pledge: ${amount} · {packets} packets
+                  {status === 'sent' ? (
+                    <p className="pt-8 text-center text-lg font-semibold" role="status">
+                      Pledge sent. We'll reply at {email.trim()}.
                     </p>
-                    <button type="submit" className={buttonClass('brand', 'lg', 'w-full')}>
-                      <Send className="size-5" aria-hidden />
-                      Send pledge
-                    </button>
-                  </form>
+                  ) : (
+                    <form className="space-y-4 pt-8" onSubmit={sendPledge}>
+                      <div>
+                        <label htmlFor="pledge-email" className="mb-2 block text-sm font-semibold">
+                          Your email
+                        </label>
+                        <input
+                          ref={emailRef}
+                          id="pledge-email"
+                          name="email"
+                          type="email"
+                          required
+                          autoComplete="email"
+                          value={email}
+                          onChange={(event) => setEmail(event.target.value)}
+                          placeholder="you@example.com"
+                          className="w-full rounded-full border-2 border-ink/15 px-5 py-3 outline-none focus:border-brand"
+                        />
+                      </div>
+                      <p className="text-sm font-semibold">
+                        Pledge: ${amount} · {packets} packets
+                      </p>
+                      {status === 'error' && (
+                        <p className="text-sm font-semibold text-coral" role="alert">
+                          {errorMessage}
+                        </p>
+                      )}
+                      <button
+                        type="submit"
+                        disabled={status === 'sending'}
+                        className={buttonClass('brand', 'lg', 'w-full disabled:opacity-60')}
+                      >
+                        <Send className="size-5" aria-hidden />
+                        {status === 'sending' ? 'Sending…' : 'Send pledge'}
+                      </button>
+                    </form>
+                  )}
                 </div>
               </div>
             </>
