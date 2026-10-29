@@ -19,7 +19,14 @@ export function Drops() {
             >
               {stop.year}
             </div>
-            <h3 className="mt-6 text-4xl">{stop.place}</h3>
+            <h3 className="mt-6 text-2xl">
+              {stop.flag && (
+                <span className="mr-2" aria-hidden>
+                  {stop.flag}
+                </span>
+              )}
+              {stop.place}
+            </h3>
             <p className="mt-2 text-sm font-bold tracking-[0.16em] text-brand uppercase">
               {stop.status}
             </p>
