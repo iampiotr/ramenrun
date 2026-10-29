@@ -114,9 +114,9 @@ export function GiftCalculator() {
           </div>
 
           <p className="mt-8 text-center" aria-live="polite">
-            <span className="block">
-              <span className="font-display text-7xl tracking-wide text-ramen">{packets}</span>{' '}
-              <span className="text-lg font-semibold">packs</span>
+            <span className="flex items-baseline justify-center gap-3">
+              <span className="font-display text-7xl tracking-wide text-ramen">{packets}</span>
+              <span className="font-display text-5xl tracking-wide text-ramen">packs</span>
             </span>
             <span className="text-lg font-semibold">of ramen for kids</span>
           </p>
