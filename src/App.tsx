@@ -2,7 +2,6 @@ import { Bio } from './components/Bio'
 import { Cause } from './components/Cause'
 import { Drops } from './components/Drops'
 import { Faq } from './components/Faq'
-import { FieldNotes } from './components/FieldNotes'
 import { FinalCta } from './components/FinalCta'
 import { Footer } from './components/Footer'
 import { Gallery } from './components/Gallery'
@@ -32,7 +31,6 @@ export default function App() {
         <GiftCalculator />
         <Bio />
         <Gallery />
-        <FieldNotes />
         <Faq />
         <FinalCta />
       </main>

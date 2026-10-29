@@ -161,28 +161,6 @@ export const gallery = {
   ] satisfies GalleryPhoto[],
 }
 
-export const fieldNotes = {
-  eyebrow: 'Notes From the Field',
-  title: 'Real kids. Real meals.',
-  notes: [
-    {
-      name: 'Sokha',
-      place: 'Village near Puok',
-      text: "Sokha's village received 400 packets, enough for every family to have meals for a week.",
-    },
-    {
-      name: 'Dara',
-      place: 'Village near Banteay Srei',
-      text: 'Dara, age 9, carried home packets for his three younger sisters before eating any himself.',
-    },
-    {
-      name: 'Srey Mom',
-      place: 'Floating village, Tonle Sap',
-      text: "Srey Mom's grandmother cooked ramen for 12 neighborhood kids the same night we arrived.",
-    },
-  ],
-}
-
 export const faq = {
   eyebrow: 'FAQ',
   title: 'Where does the money go?',
