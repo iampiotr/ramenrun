@@ -1,51 +1,29 @@
 import { useEffect, useState } from 'react'
 
 type RotatingTextProps = {
-  // *Word* pops and glows. _Word_ gets the underline. Either marker holds the phrase longer.
+  // *Word* pops and glows, and holds the phrase longer.
   phrases: string[]
   intervalMs?: number
   emphasisMs?: number
   className?: string
 }
 
-const plain = (phrase: string) => phrase.replaceAll(/[*_]/g, '')
-const isEmphasized = (phrase: string) => /[*_]/.test(phrase)
-
-function Underline({ active }: { active: boolean }) {
-  return (
-    <span
-      className={`absolute inset-x-0 -bottom-1 h-2 origin-left rounded-full bg-[#ff2d2d] ${
-        active
-          ? 'animate-underline motion-reduce:animate-none motion-reduce:scale-x-100'
-          : 'scale-x-0'
-      }`}
-    />
-  )
-}
+const plain = (phrase: string) => phrase.replaceAll('*', '')
+const isEmphasized = (phrase: string) => phrase.includes('*')
 
 function Phrase({ text, active }: { text: string; active: boolean }) {
-  return text.split(/(\*[^*]+\*|_[^_]+_)/).map((part, i) => {
-    if (part.startsWith('*')) {
-      return (
-        <span
-          key={`${i}-${String(active)}`}
-          className={`inline-block origin-bottom-left ${active ? 'animate-pop motion-reduce:animate-none' : ''}`}
-        >
-          <span className={active ? 'animate-glow motion-reduce:animate-none' : ''}>
-            {part.slice(1, -1)}
-          </span>
-        </span>
-      )
-    }
-    if (part.startsWith('_')) {
-      return (
-        <span key={i} className="relative inline-block">
+  return text.split(/(\*[^*]+\*)/).map((part, i) => {
+    if (!part.startsWith('*')) return part
+    return (
+      <span
+        key={`${i}-${String(active)}`}
+        className={`inline-block origin-bottom-left ${active ? 'animate-pop motion-reduce:animate-none' : ''}`}
+      >
+        <span className={active ? 'animate-glow motion-reduce:animate-none' : ''}>
           {part.slice(1, -1)}
-          <Underline active={active} />
         </span>
-      )
-    }
-    return part
+      </span>
+    )
   })
 }
 
