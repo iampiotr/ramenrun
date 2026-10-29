@@ -87,7 +87,7 @@ export function GiftCalculator() {
               Pick an amount. <span className="text-brand">See the meals.</span>
             </>
           }
-          intro={`Ramen costs about ${COST_PER_PACKET_USD * 100}¢ a packet in Siem Reap, so a little goes a long way.`}
+          intro={`Ramen costs about ${COST_PER_PACKET_USD * 100}¢ a packet in many East Asia's developing countries, so a little goes a long way.`}
         />
 
         <div className="rounded-card bg-white p-7 shadow-xl shadow-brand/10">
