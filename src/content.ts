@@ -67,7 +67,6 @@ export const howItWorks = {
 export const drops = {
   eyebrow: 'Ramen Drops',
   title: 'The drop timeline',
-  intro: 'One country at a time. Ramen is bought locally and handed to kids.',
   stops: [
     { year: '2026', place: 'Cambodia', flag: '🇰🇭', status: 'Now' },
     { year: '2027', place: 'Vietnam', flag: '🇻🇳', status: 'Next' },
