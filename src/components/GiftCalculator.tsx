@@ -32,7 +32,7 @@ async function sendPledgeEmail(email: string, amount: number, packets: number) {
       email,
       pledge: `$${amount}`,
       packets: String(packets),
-      message: `I want to pledge $${amount} (${packets} packets of ramen).\n\nMy email: ${email}`,
+      message: `I want to pledge $${amount} (${packets} packs of ramen).\n\nMy email: ${email}`,
     }),
   })
   const result = (await response.json()) as PledgeResponse
@@ -114,8 +114,11 @@ export function GiftCalculator() {
           </div>
 
           <p className="mt-8 text-center" aria-live="polite">
-            <span className="block font-display text-7xl tracking-wide text-ramen">{packets}</span>
-            <span className="text-lg font-semibold">packets of ramen for kids in Cambodia</span>
+            <span className="block">
+              <span className="font-display text-7xl tracking-wide text-ramen">{packets}</span>{' '}
+              <span className="text-lg font-semibold">packs</span>
+            </span>
+            <span className="text-lg font-semibold">of ramen for kids</span>
           </p>
 
           {isDonateLive ? (
@@ -175,7 +178,7 @@ export function GiftCalculator() {
                         />
                       </div>
                       <p className="text-sm font-semibold">
-                        Pledge: ${amount} · {packets} packets
+                        Pledge: ${amount} · {packets} packs
                       </p>
                       {status === 'error' && (
                         <p className="text-sm font-semibold text-coral" role="alert">
