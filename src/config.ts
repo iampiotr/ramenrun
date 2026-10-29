@@ -17,7 +17,7 @@ export const IMPACT = {
 
 export const CONTACT_EMAIL = 'hello@ramenforcambodia.org'
 
-export const PLEDGE_EMAIL = 'team@ramenrun.org'
+export const PLEDGE_EMAIL = 'pledge@ramenrun.org'
 
 export const SOCIAL_LINKS = [
   { label: 'Instagram', href: 'https://instagram.com/' },
