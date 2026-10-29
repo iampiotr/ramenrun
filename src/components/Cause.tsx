@@ -182,7 +182,7 @@ function CauseVideo() {
             className="group relative h-full w-full cursor-pointer"
           >
             <img
-              src={`https://i.ytimg.com/vi/${cause.videoId}/maxresdefault.jpg`}
+              src={`https://i.ytimg.com/vi/${cause.videoId}/sddefault.jpg`}
               alt=""
               className="h-full w-full object-cover"
             />
