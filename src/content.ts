@@ -70,7 +70,7 @@ export const drops = {
   stops: [
     { year: '2026', place: 'Cambodia', flag: '🇰🇭', status: 'Now' },
     { year: '2027', place: 'Vietnam', flag: '🇻🇳', status: 'Next' },
-    { year: '2028', place: 'TBD', status: 'Planned' },
+    { year: '2028', place: 'TBD', flag: '🌏', status: 'Future' },
   ],
 }
 
