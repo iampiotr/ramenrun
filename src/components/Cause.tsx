@@ -26,6 +26,20 @@ declare global {
 const PLAYER_ID = 'cause-youtube'
 const ENDED = 0
 
+function useNativeControls() {
+  const [native, setNative] = useState(false)
+
+  useEffect(() => {
+    const query = window.matchMedia('(hover: none), (pointer: coarse)')
+    const update = () => setNative(query.matches)
+    update()
+    query.addEventListener('change', update)
+    return () => query.removeEventListener('change', update)
+  }, [])
+
+  return native
+}
+
 function loadYouTubeApi() {
   if (window.YT?.Player) return Promise.resolve()
   return new Promise<void>((resolve) => {
@@ -112,7 +126,7 @@ function SeekBar({ player }: { player: YtPlayer }) {
           setTime(next)
           player.seekTo(next, true)
         }}
-        className="h-1.5 w-full cursor-pointer accent-brand"
+        className="h-1.5 w-full min-w-0 cursor-pointer accent-brand"
       />
       <button
         type="button"
@@ -132,6 +146,7 @@ function SeekBar({ player }: { player: YtPlayer }) {
 function CauseVideo() {
   const [started, setStarted] = useState(false)
   const [player, setPlayer] = useState<YtPlayer | null>(null)
+  const nativeControls = useNativeControls()
 
   useEffect(() => {
     if (!started) return
@@ -161,7 +176,7 @@ function CauseVideo() {
     }
   }, [started])
 
-  const src = `https://www.youtube-nocookie.com/embed/${cause.videoId}?autoplay=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1&fs=0&enablejsapi=1&origin=${encodeURIComponent(window.location.origin)}`
+  const src = `https://www.youtube-nocookie.com/embed/${cause.videoId}?autoplay=1&controls=${nativeControls ? 1 : 0}&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1&fs=${nativeControls ? 1 : 0}&enablejsapi=1&origin=${encodeURIComponent(window.location.origin)}`
 
   return (
     <div className="flex flex-col gap-3">
@@ -169,7 +184,7 @@ function CauseVideo() {
         {started ? (
           <iframe
             id={PLAYER_ID}
-            className="pointer-events-none absolute inset-0 h-full w-full"
+            className={`absolute inset-0 h-full w-full ${nativeControls ? '' : 'pointer-events-none'}`}
             src={src}
             title={cause.videoTitle}
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -195,7 +210,7 @@ function CauseVideo() {
           </button>
         )}
       </div>
-      {player && <SeekBar player={player} />}
+      {player && !nativeControls && <SeekBar player={player} />}
     </div>
   )
 }
