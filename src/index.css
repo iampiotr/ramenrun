@@ -42,34 +42,21 @@
   }
 }
 
-/* Label width follows the number: the grid sizes to the count, and the
-   label fills that width. 10.5cqi is tuned for Anton + tracking-wide. */
 .pack-count {
-  display: inline-grid;
-  justify-items: center;
-  width: fit-content;
-  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
 .pack-count-num {
-  grid-row: 1;
   line-height: 1;
 }
 
 .pack-count-label {
-  grid-row: 2;
-  width: 0;
-  min-width: 100%;
-  container-type: inline-size;
-}
-
-.pack-count-label-text {
-  display: block;
+  font-size: 25px;
   line-height: 1;
-  font-size: 10.5cqi;
   white-space: nowrap;
-  text-align: center;
 }
 
 #drops {

@@ -115,9 +115,7 @@ export function GiftCalculator() {
 
           <p className="pack-count mt-8" aria-live="polite">
             <span className="pack-count-num font-display text-7xl tracking-wide text-ramen">{packets}</span>
-            <span className="pack-count-label font-display tracking-wide text-ramen">
-              <span className="pack-count-label-text">Ramen Packs</span>
-            </span>
+            <span className="pack-count-label font-display tracking-wide text-ramen">Ramen Packs</span>
           </p>
 
           {isDonateLive ? (
