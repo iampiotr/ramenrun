@@ -10,6 +10,7 @@ export const site = {
 export const nav = [
   { label: 'The Cause', href: '#cause' },
   { label: 'How It Works', href: '#how' },
+  { label: 'Drops', href: '#drops' },
   { label: 'About Brandon', href: '#bio' },
   { label: 'Photos', href: '#gallery' },
   { label: 'FAQ', href: '#faq' },
@@ -60,6 +61,17 @@ export const howItWorks = {
       title: 'Kids eat',
       body: 'Packets go straight into the hands of kids and their families. I share photos and updates from every trip.',
     },
+  ],
+}
+
+export const drops = {
+  eyebrow: 'Ramen Drops',
+  title: 'The drop timeline',
+  intro: 'One country at a time. Ramen is bought locally and handed to kids.',
+  stops: [
+    { year: '2026', place: 'Cambodia', status: 'Now' },
+    { year: '2027', place: 'Vietnam', status: 'Next' },
+    { year: '2028', place: 'TBD', status: 'Planned' },
   ],
 }
 

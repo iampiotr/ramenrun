@@ -1,5 +1,6 @@
 import { Bio } from './components/Bio'
 import { Cause } from './components/Cause'
+import { Drops } from './components/Drops'
 import { Faq } from './components/Faq'
 import { FieldNotes } from './components/FieldNotes'
 import { FinalCta } from './components/FinalCta'
@@ -26,6 +27,7 @@ export default function App() {
         <ImpactStats />
         <Cause />
         <HowItWorks />
+        <Drops />
         <GiftCalculator />
         <Bio />
         <Gallery />
