@@ -3,6 +3,7 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from '
 type PledgeContextValue = {
   open: boolean
   openPledge: () => void
+  closePledge: () => void
 }
 
 const PledgeContext = createContext<PledgeContextValue | null>(null)
@@ -24,7 +25,16 @@ export function PledgeProvider({ children }: { children: ReactNode }) {
     document.getElementById('donate')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
-  return <PledgeContext.Provider value={{ open, openPledge }}>{children}</PledgeContext.Provider>
+  function closePledge() {
+    setOpen(false)
+    if (window.location.hash === '#donate') {
+      history.replaceState(null, '', window.location.pathname + window.location.search)
+    }
+  }
+
+  return (
+    <PledgeContext.Provider value={{ open, openPledge, closePledge }}>{children}</PledgeContext.Provider>
+  )
 }
 
 export function usePledge() {
