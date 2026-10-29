@@ -1,5 +1,45 @@
+import { useState } from 'react'
+import { Play } from 'lucide-react'
+
 import { Section, SectionHeading } from './Section'
 import { cause } from '../content'
+
+function CauseVideo() {
+  const [playing, setPlaying] = useState(false)
+  const src = `https://www.youtube-nocookie.com/embed/${cause.videoId}?autoplay=1&controls=0&modestbranding=1&rel=0&fs=0&disablekb=1&iv_load_policy=3&playsinline=1&cc_load_policy=0`
+
+  if (playing) {
+    return (
+      <iframe
+        className="h-full w-full"
+        src={src}
+        title={cause.videoTitle}
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        referrerPolicy="strict-origin-when-cross-origin"
+      />
+    )
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={() => setPlaying(true)}
+      className="group relative h-full w-full cursor-pointer"
+    >
+      <img
+        src={`https://i.ytimg.com/vi/${cause.videoId}/maxresdefault.jpg`}
+        alt=""
+        className="h-full w-full object-cover"
+      />
+      <span className="absolute inset-0 flex items-center justify-center bg-ink/20 transition-colors group-hover:bg-ink/30">
+        <span className="flex size-16 items-center justify-center rounded-full bg-white text-brand shadow-lg">
+          <Play className="size-7 translate-x-0.5" aria-hidden />
+        </span>
+        <span className="sr-only">Play video</span>
+      </span>
+    </button>
+  )
+}
 
 export function Cause() {
   return (
@@ -25,14 +65,7 @@ export function Cause() {
         </div>
 
         <div className="aspect-video w-full overflow-hidden rounded-card shadow-xl">
-          <iframe
-            className="h-full w-full"
-            src={`https://www.youtube-nocookie.com/embed/${cause.videoId}?controls=0&modestbranding=1&rel=0&fs=0&disablekb=1&iv_load_policy=3&playsinline=1&cc_load_policy=0`}
-            title={cause.videoTitle}
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            referrerPolicy="strict-origin-when-cross-origin"
-            loading="lazy"
-          />
+          <CauseVideo />
         </div>
       </div>
     </Section>
