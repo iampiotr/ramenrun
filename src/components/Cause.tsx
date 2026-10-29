@@ -6,16 +6,16 @@ import { cause } from '../content'
 
 function CauseVideo() {
   const [playing, setPlaying] = useState(false)
-  const src = `https://www.youtube-nocookie.com/embed/${cause.videoId}?autoplay=1&controls=0&modestbranding=1&rel=0&fs=0&disablekb=1&iv_load_policy=3&playsinline=1&cc_load_policy=0`
 
   if (playing) {
     return (
       <iframe
-        className="h-full w-full"
-        src={src}
+        className="absolute inset-x-0 -top-16 h-[calc(100%+4rem)] w-full"
+        src={`https://www.youtube-nocookie.com/embed/${cause.videoId}?autoplay=1&controls=1&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1`}
         title={cause.videoTitle}
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
         referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
       />
     )
   }
@@ -64,7 +64,7 @@ export function Cause() {
           </figure>
         </div>
 
-        <div className="aspect-video w-full overflow-hidden rounded-card shadow-xl">
+        <div className="relative aspect-video w-full overflow-hidden rounded-card shadow-xl">
           <CauseVideo />
         </div>
       </div>
