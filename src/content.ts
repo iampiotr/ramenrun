@@ -35,8 +35,8 @@ export const cause = {
     text: 'children under five in Cambodia are stunted from chronic undernutrition.',
     source: 'Cambodia Demographic and Health Survey 2021-22',
   },
-  image: photo('village.svg'),
-  imageAlt: 'A dirt road leading into a rural village outside Siem Reap',
+  videoId: 'PPg0MJJat2U',
+  videoTitle: 'Ramen Run: Direct Social Impact in Cambodia',
 }
 
 export const howItWorks = {

@@ -24,12 +24,17 @@ export function Cause() {
           </figure>
         </div>
 
-        <img
-          src={cause.image}
-          alt={cause.imageAlt}
-          className="aspect-[4/3] w-full rounded-card object-cover shadow-xl"
-          loading="lazy"
-        />
+        <div className="aspect-video w-full overflow-hidden rounded-card shadow-xl">
+          <iframe
+            className="h-full w-full"
+            src={`https://www.youtube-nocookie.com/embed/${cause.videoId}`}
+            title={cause.videoTitle}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            loading="lazy"
+          />
+        </div>
       </div>
     </Section>
   )
