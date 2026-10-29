@@ -14,12 +14,11 @@ type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   size?: 'md' | 'lg'
 }
 
-export function Button({ variant = 'sun', size = 'md', className = '', ...props }: ButtonProps) {
+export function buttonClass(variant: Variant = 'sun', size: 'md' | 'lg' = 'md', className = '') {
   const sizing = size === 'lg' ? 'px-8 py-4 text-lg' : 'px-6 py-3 text-base'
-  return (
-    <a
-      className={`inline-flex items-center justify-center gap-2 rounded-full font-bold transition-colors focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-sun ${sizing} ${variants[variant]} ${className}`}
-      {...props}
-    />
-  )
+  return `inline-flex cursor-pointer items-center justify-center gap-2 rounded-full font-bold transition-colors focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-sun ${sizing} ${variants[variant]} ${className}`
+}
+
+export function Button({ variant = 'sun', size = 'md', className = '', ...props }: ButtonProps) {
+  return <a className={buttonClass(variant, size, className)} {...props} />
 }

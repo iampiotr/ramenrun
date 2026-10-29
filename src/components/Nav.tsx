@@ -3,11 +3,20 @@ import { useState } from 'react'
 
 import { Button } from './Button'
 import { Logo } from './Logo'
-import { donateHref } from '../config'
+import { donateHref, isDonateLive } from '../config'
+import { usePledge } from './pledge'
 import { nav, site } from '../content'
 
 export function Nav() {
   const [open, setOpen] = useState(false)
+  const { openPledge } = usePledge()
+
+  function donate(event: { preventDefault: () => void }) {
+    setOpen(false)
+    if (isDonateLive) return
+    event.preventDefault()
+    openPledge()
+  }
 
   return (
     <header className="sticky top-0 z-40 bg-brand text-white shadow-lg shadow-brand-dark/20">
@@ -22,7 +31,9 @@ export function Nav() {
               {item.label}
             </a>
           ))}
-          <Button href={donateHref()}>Donate</Button>
+          <Button href={donateHref()} onClick={donate}>
+            Donate
+          </Button>
         </nav>
 
         <button
@@ -51,7 +62,7 @@ export function Nav() {
               {item.label}
             </a>
           ))}
-          <Button href={donateHref()} className="mt-3" onClick={() => setOpen(false)}>
+          <Button href={donateHref()} className="mt-3" onClick={donate}>
             Donate
           </Button>
         </nav>

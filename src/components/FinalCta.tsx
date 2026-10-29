@@ -1,10 +1,13 @@
 import { Heart } from 'lucide-react'
 
 import { Button } from './Button'
-import { donateHref } from '../config'
+import { donateHref, isDonateLive } from '../config'
+import { usePledge } from './pledge'
 import { finalCta } from '../content'
 
 export function FinalCta() {
+  const { openPledge } = usePledge()
+
   return (
     <section className="px-5 py-20">
       <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[40px] bg-sun px-8 py-16 text-center md:py-20">
@@ -13,7 +16,17 @@ export function FinalCta() {
         <div className="relative">
           <h2 className="text-5xl leading-none md:text-7xl">{finalCta.title}</h2>
           <p className="mx-auto mt-5 max-w-xl text-lg md:text-xl">{finalCta.body}</p>
-          <Button href={donateHref()} variant="brand" size="lg" className="mt-9">
+          <Button
+            href={donateHref()}
+            variant="brand"
+            size="lg"
+            className="mt-9"
+            onClick={(event) => {
+              if (isDonateLive) return
+              event.preventDefault()
+              openPledge()
+            }}
+          >
             <Heart className="size-5" aria-hidden />
             Donate Now
           </Button>

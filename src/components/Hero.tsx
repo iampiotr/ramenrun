@@ -2,10 +2,13 @@ import { ArrowDown, Heart } from 'lucide-react'
 
 import { Button } from './Button'
 import { RotatingText } from './RotatingText'
-import { donateHref } from '../config'
+import { donateHref, isDonateLive } from '../config'
+import { usePledge } from './pledge'
 import { hero } from '../content'
 
 export function Hero() {
+  const { openPledge } = usePledge()
+
   return (
     <section
       id="top"
@@ -24,7 +27,15 @@ export function Hero() {
           <p className="mt-6 max-w-xl text-lg text-white/90 md:text-xl">{hero.body}</p>
 
           <div className="mt-9 flex flex-wrap gap-4">
-            <Button href={donateHref()} size="lg">
+            <Button
+              href={donateHref()}
+              size="lg"
+              onClick={(event) => {
+                if (isDonateLive) return
+                event.preventDefault()
+                openPledge()
+              }}
+            >
               <Heart className="size-5" aria-hidden />
               Donate Now
             </Button>

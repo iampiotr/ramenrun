@@ -1,13 +1,47 @@
-import { Heart, Info } from 'lucide-react'
-import { useState } from 'react'
+import { Heart, Send } from 'lucide-react'
+import { useEffect, useRef, useState, type FormEvent } from 'react'
 
-import { Button } from './Button'
+import { buttonClass, Button } from './Button'
 import { Section, SectionHeading } from './Section'
-import { COST_PER_PACKET_USD, GIFT_AMOUNTS_USD, donateHref, isDonateLive } from '../config'
+import { usePledge } from './pledge'
+import {
+  COST_PER_PACKET_USD,
+  GIFT_AMOUNTS_USD,
+  PLEDGE_EMAIL,
+  donateHref,
+  isDonateLive,
+} from '../config'
+
+function pledgeMailto(email: string, amount: number, packets: number) {
+  const subject = `Donation pledge — $${amount}`
+  const body = [
+    `I want to pledge $${amount} (${packets} packets of ramen).`,
+    '',
+    `My email: ${email}`,
+  ].join('\n')
+  return `mailto:${PLEDGE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+}
 
 export function GiftCalculator() {
+  const { open, openPledge } = usePledge()
   const [amount, setAmount] = useState(GIFT_AMOUNTS_USD[1])
+  const [email, setEmail] = useState('')
+  const emailRef = useRef<HTMLInputElement>(null)
   const packets = Math.floor(amount / COST_PER_PACKET_USD)
+
+  useEffect(() => {
+    if (open) emailRef.current?.focus()
+  }, [open])
+
+  function sendPledge(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    const address = email.trim()
+    if (!emailRef.current?.checkValidity()) {
+      emailRef.current?.reportValidity()
+      return
+    }
+    window.location.href = pledgeMailto(address, amount, packets)
+  }
 
   return (
     <Section id="donate">
@@ -50,16 +84,62 @@ export function GiftCalculator() {
             <span className="text-lg font-semibold">packets of ramen for kids in Cambodia</span>
           </p>
 
-          <Button href={donateHref(amount)} variant="sun" size="lg" className="mt-8 w-full">
-            <Heart className="size-5" aria-hidden />
-            Donate ${amount}
-          </Button>
+          {isDonateLive ? (
+            <Button href={donateHref(amount)} variant="sun" size="lg" className="mt-8 w-full">
+              <Heart className="size-5" aria-hidden />
+              Donate ${amount}
+            </Button>
+          ) : (
+            <button
+              type="button"
+              className={buttonClass('sun', 'lg', 'mt-8 w-full')}
+              aria-expanded={open}
+              aria-controls="pledge-form"
+              onClick={openPledge}
+            >
+              <Heart className="size-5" aria-hidden />
+              Donate ${amount}
+            </button>
+          )}
 
           {!isDonateLive && (
-            <p className="mt-4 flex items-start gap-2 rounded-xl bg-sky-light p-3 text-sm text-ink/70">
-              <Info className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden />
-              Online donations are coming soon. In the meantime, reach out by email to give.
-            </p>
+            <div
+              className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+                open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+              }`}
+            >
+              <div className="overflow-hidden" inert={!open}>
+                <form id="pledge-form" className="space-y-4 pt-6" onSubmit={sendPledge}>
+                  <p className="text-sm text-ink/70">
+                    To <span className="font-semibold text-ink">{PLEDGE_EMAIL}</span>
+                  </p>
+                  <div>
+                    <label htmlFor="pledge-email" className="mb-2 block text-sm font-semibold">
+                      Your email
+                    </label>
+                    <input
+                      ref={emailRef}
+                      id="pledge-email"
+                      name="email"
+                      type="email"
+                      required
+                      autoComplete="email"
+                      value={email}
+                      onChange={(event) => setEmail(event.target.value)}
+                      placeholder="you@example.com"
+                      className="w-full rounded-full border-2 border-ink/15 px-5 py-3 outline-none focus:border-brand"
+                    />
+                  </div>
+                  <p className="text-sm font-semibold">
+                    Pledge: ${amount} · {packets} packets
+                  </p>
+                  <button type="submit" className={buttonClass('brand', 'lg', 'w-full')}>
+                    <Send className="size-5" aria-hidden />
+                    Send pledge
+                  </button>
+                </form>
+              </div>
+            </div>
           )}
         </div>
       </div>
