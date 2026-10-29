@@ -90,56 +90,62 @@ export function GiftCalculator() {
               Donate ${amount}
             </Button>
           ) : (
-            <button
-              type="button"
-              className={buttonClass('sun', 'lg', 'mt-8 w-full')}
-              aria-expanded={open}
-              aria-controls="pledge-form"
-              onClick={openPledge}
-            >
-              <Heart className="size-5" aria-hidden />
-              Donate ${amount}
-            </button>
-          )}
-
-          {!isDonateLive && (
-            <div
-              className={`grid transition-[grid-template-rows] duration-300 ease-out ${
-                open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
-              }`}
-            >
-              <div className="overflow-hidden" inert={!open}>
-                <form id="pledge-form" className="space-y-4 pt-6" onSubmit={sendPledge}>
-                  <p className="text-sm text-ink/70">
-                    To <span className="font-semibold text-ink">{PLEDGE_EMAIL}</span>
-                  </p>
-                  <div>
-                    <label htmlFor="pledge-email" className="mb-2 block text-sm font-semibold">
-                      Your email
-                    </label>
-                    <input
-                      ref={emailRef}
-                      id="pledge-email"
-                      name="email"
-                      type="email"
-                      required
-                      autoComplete="email"
-                      value={email}
-                      onChange={(event) => setEmail(event.target.value)}
-                      placeholder="you@example.com"
-                      className="w-full rounded-full border-2 border-ink/15 px-5 py-3 outline-none focus:border-brand"
-                    />
-                  </div>
-                  <p className="text-sm font-semibold">
-                    Pledge: ${amount} · {packets} packets
-                  </p>
-                  <button type="submit" className={buttonClass('brand', 'lg', 'w-full')}>
-                    <Send className="size-5" aria-hidden />
-                    Send pledge
+            <>
+              <div
+                className={`grid transition-[grid-template-rows] duration-500 ease-out ${
+                  open ? 'grid-rows-[0fr]' : 'grid-rows-[1fr]'
+                }`}
+              >
+                <div className="overflow-hidden" inert={open}>
+                  <button
+                    type="button"
+                    className={buttonClass('sun', 'lg', 'mt-8 w-full')}
+                    aria-expanded={open}
+                    aria-controls="pledge-form"
+                    onClick={openPledge}
+                  >
+                    <Heart className="size-5" aria-hidden />
+                    Donate ${amount}
                   </button>
-                </form>
+                </div>
               </div>
-            </div>
+
+              <div
+                id="pledge-form"
+                className={`grid transition-[grid-template-rows] duration-500 ease-out ${
+                  open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+                }`}
+              >
+                <div className="overflow-hidden" inert={!open}>
+                  <form className="space-y-4 pt-8" onSubmit={sendPledge}>
+                    <div>
+                      <label htmlFor="pledge-email" className="mb-2 block text-sm font-semibold">
+                        Your email
+                      </label>
+                      <input
+                        ref={emailRef}
+                        id="pledge-email"
+                        name="email"
+                        type="email"
+                        required
+                        autoComplete="email"
+                        value={email}
+                        onChange={(event) => setEmail(event.target.value)}
+                        placeholder="you@example.com"
+                        className="w-full rounded-full border-2 border-ink/15 px-5 py-3 outline-none focus:border-brand"
+                      />
+                    </div>
+                    <p className="text-sm font-semibold">
+                      Pledge: ${amount} · {packets} packets
+                    </p>
+                    <button type="submit" className={buttonClass('brand', 'lg', 'w-full')}>
+                      <Send className="size-5" aria-hidden />
+                      Send pledge
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </>
           )}
         </div>
       </div>
