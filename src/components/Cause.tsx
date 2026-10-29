@@ -10,7 +10,7 @@ function CauseVideo() {
   if (playing) {
     return (
       <iframe
-        className="absolute bottom-0 left-1/2 h-[calc(100%+5rem)] w-[calc(100%+8.889rem)] max-w-none -translate-x-1/2"
+        className="absolute inset-0 h-full w-full"
         src={`https://www.youtube-nocookie.com/embed/${cause.videoId}?autoplay=1&controls=1&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1`}
         title={cause.videoTitle}
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
