@@ -53,6 +53,16 @@
   }
 }
 
+#drops {
+  padding-bottom: calc(5rem - 20px);
+}
+
+@media (min-width: 48rem) {
+  #drops {
+    padding-bottom: calc(7rem - 20px);
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
