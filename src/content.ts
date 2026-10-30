@@ -124,11 +124,11 @@ export const gallery = {
       height: 800,
     },
     {
-      src: photo('04.svg'),
-      alt: 'A village chief helping hand out food',
-      caption: 'Working with the village chief',
-      width: 1200,
-      height: 800,
+      src: photo('04.jpg'),
+      alt: 'Families and children gather around a green ATV while a rider hands out ramen packets on a village road',
+      caption: 'Working with the village elder',
+      width: 1024,
+      height: 637,
     },
     {
       src: photo('05.svg'),
