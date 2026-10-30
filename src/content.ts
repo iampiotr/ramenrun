@@ -131,11 +131,11 @@ export const gallery = {
       height: 637,
     },
     {
-      src: photo('05.jpg'),
-      alt: 'A rider in a helmet hands ramen packets to children seated at desks in a classroom',
+      src: photo('05b.jpg'),
+      alt: 'A young man hands a ramen packet to a student at a desk in a classroom',
       caption: 'Handing out in a local classroom',
-      width: 1024,
-      height: 1000,
+      width: 917,
+      height: 1024,
     },
     {
       src: photo('06b.jpg'),
