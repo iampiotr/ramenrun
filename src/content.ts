@@ -145,11 +145,11 @@ export const gallery = {
       height: 800,
     },
     {
-      src: photo('07.svg'),
-      alt: 'A group of kids waving at the camera',
-      caption: 'Thank you from the kids!',
-      width: 800,
-      height: 800,
+      src: photo('07.jpg'),
+      alt: 'A teacher stands with preschool children seated around low tables in a classroom',
+      caption: 'Big smiles from preschool',
+      width: 1024,
+      height: 614,
     },
     {
       src: photo('08.svg'),
