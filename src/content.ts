@@ -146,7 +146,7 @@ export const gallery = {
     },
     {
       src: photo('07.jpg'),
-      alt: 'A teacher stands with preschool children seated around low tables in a classroom',
+      alt: 'A teacher stands in a preschool classroom while children sit at low tables and on plastic chairs',
       caption: 'Big smiles from preschool',
       width: 1024,
       height: 614,
