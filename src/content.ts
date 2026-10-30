@@ -138,11 +138,11 @@ export const gallery = {
       height: 1000,
     },
     {
-      src: photo('06.svg'),
-      alt: 'A rural road through rice paddies outside Siem Reap',
+      src: photo('06.jpg'),
+      alt: 'A rider in a helmet stands beside a green ATV loaded with boxes on a muddy dirt road',
       caption: 'On the road to the next village',
-      width: 1200,
-      height: 800,
+      width: 1024,
+      height: 833,
     },
     {
       src: photo('07.jpg'),
