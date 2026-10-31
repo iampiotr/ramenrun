@@ -103,7 +103,7 @@ export const gallery = {
   intro: 'Snapshots from our most recent delivery run around Siem Reap. Tap any photo to see it larger.',
   photos: [
     {
-      src: photo('loading3.jpg'),
+      src: photo('loading4.jpg'),
       alt: 'I stand in a helmet beside a red ATV with a box loaded on the front, outside market stalls',
       caption: 'Picked up ramen from the local market',
       width: 1024,
