@@ -119,7 +119,7 @@ export const gallery = {
     {
       src: photo('04b.jpg'),
       alt: 'When we arrived, we met with the village elder, who helped us hand out ramen to local families. Lots of kids came over to see what was going on.',
-      caption: 'Meeting the villagers',
+      caption: 'Helping the villages in need',
       width: 1024,
       height: 642,
     },
