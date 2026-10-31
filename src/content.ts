@@ -117,11 +117,11 @@ export const gallery = {
       height: 1024,
     },
     {
-      src: photo('03.svg'),
-      alt: 'A girl smiling while holding two ramen packets',
+      src: photo('03.jpg'),
+      alt: 'A young man hands ramen packets to students seated at desks in a classroom',
       caption: 'Two packets, one big smile',
-      width: 800,
-      height: 800,
+      width: 1024,
+      height: 731,
     },
     {
       src: photo('04.jpg'),
