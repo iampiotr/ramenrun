@@ -54,8 +54,8 @@ export const howItWorks = {
       body: 'I buy ramen by the case from local markets, which supports local sellers and stretches every dollar.',
     },
     {
-      title: 'I deliver it',
-      body: 'I load up and drive the food out to villages, working with local village leaders to reach the families who need it most.',
+      title: 'We deliver it',
+      body: 'My local ambassadors or I load up and drive the food out to villages, and reach the families who need it most.',
     },
     {
       title: 'Kids eat',
