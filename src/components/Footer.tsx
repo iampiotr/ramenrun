@@ -74,7 +74,7 @@ export function Footer() {
       </div>
 
       <p className="mx-auto mt-14 max-w-6xl border-t border-white/15 pt-6 text-sm text-white/50">
-        © {year} {site.name}. A personal project feeding kids in Siem Reap, Cambodia.
+        © {year} {site.name}.
       </p>
     </footer>
   )

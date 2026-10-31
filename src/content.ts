@@ -51,7 +51,7 @@ export const howItWorks = {
     },
     {
       title: 'I buy in bulk',
-      body: 'I buy ramen by the case from local markets in Siem Reap, which supports local sellers and stretches every dollar.',
+      body: 'I buy ramen by the case from local markets, which supports local sellers and stretches every dollar.',
     },
     {
       title: 'I deliver it',
@@ -197,5 +197,5 @@ export const faq = {
 
 export const finalCta = {
   title: 'Fill a bowl today',
-  body: 'Every 50 cents is one more meal for a kid in Cambodia. Start with whatever you can.',
+  body: 'Every 50 cents is one more meal for a kid in East Asia. Start with whatever you can.',
 }
