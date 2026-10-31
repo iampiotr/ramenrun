@@ -117,11 +117,11 @@ export const gallery = {
       height: 861,
     },
     {
-      src: photo('04.jpg'),
+      src: photo('04b.jpg'),
       alt: 'Families and children gather around a green ATV while I hand out ramen packets on a village road',
       caption: 'Working with the village elder',
       width: 1024,
-      height: 637,
+      height: 642,
     },
     {
       src: photo('02c.jpg'),
@@ -145,11 +145,11 @@ export const gallery = {
       height: 614,
     },
     {
-      src: photo('05c.jpg'),
+      src: photo('05d.jpg'),
       alt: 'A woman and three children sit on a mat eating from bowls inside a wooden house',
       caption: 'Family enjoying their meal',
       width: 1024,
-      height: 576,
+      height: 685,
     },
     {
       src: photo('grateful2.jpg'),
