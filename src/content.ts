@@ -105,7 +105,7 @@ export const gallery = {
     {
       src: photo('loading4.jpg'),
       alt: 'We started at a local market in Siem Reap, Cambodia, where we picked up boxes of ramen and loaded them onto our ATVs.',
-      caption: 'Getting ready for the trip',
+      caption: 'Getting ramen from the local market',
       width: 1024,
       height: 848,
     },
