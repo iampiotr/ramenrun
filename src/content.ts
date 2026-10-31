@@ -151,13 +151,6 @@ export const gallery = {
       width: 1024,
       height: 614,
     },
-    {
-      src: photo('08.svg'),
-      alt: 'Empty boxes after a delivery day',
-      caption: 'Every box, delivered',
-      width: 800,
-      height: 1000,
-    },
   ] satisfies GalleryPhoto[],
 }
 
