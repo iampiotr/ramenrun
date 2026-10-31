@@ -19,7 +19,7 @@ export const CONTACT_EMAIL = 'team@ramenrun.org'
 
 export const PLEDGE_EMAIL = 'pledge@ramenrun.org'
 
-export const SOCIAL_LINKS = [{ label: 'YouTube', href: 'https://youtube.com/' }]
+export const SOCIAL_LINKS = [{ label: 'YouTube', href: 'https://youtube.com/@ramen-run' }]
 
 export function donateHref(amountUsd?: number) {
   if (!isDonateLive || amountUsd === undefined) return DONATE_URL
