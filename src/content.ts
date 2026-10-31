@@ -154,7 +154,7 @@ export const gallery = {
     {
       src: photo('grateful.jpg'),
       alt: 'A group of children in school uniforms stand together with their hands pressed in front of them',
-      caption: 'Kids happy and grateful',
+      caption: 'Full of hope for what\'s next',
       width: 1024,
       height: 576,
     },
