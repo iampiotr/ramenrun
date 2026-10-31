@@ -19,9 +19,9 @@ export function Gallery() {
         align="center"
       />
 
-      <ul className="columns-1 gap-5 sm:columns-2 lg:columns-3">
+      <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {gallery.photos.map((photo, i) => (
-          <li key={photo.src} className="mb-5 break-inside-avoid">
+          <li key={photo.src}>
             <button
               type="button"
               onClick={() => setIndex(i)}
