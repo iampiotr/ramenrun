@@ -110,10 +110,10 @@ export const gallery = {
       height: 848,
     },
     {
-      src: photo('02.jpg'),
+      src: photo('02b.jpg'),
       alt: 'A young man hands a ramen packet to a student at a desk in a classroom',
       caption: 'The line forms fast',
-      width: 917,
+      width: 1016,
       height: 1024,
     },
     {
