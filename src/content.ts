@@ -133,7 +133,7 @@ export const gallery = {
     {
       src: photo('03b.jpg'),
       alt: 'We went into the classrooms and gave ramen to the students. It was fun meeting everyone and seeing how different their school was from mine.',
-      caption: 'Handing out ramen to students',
+      caption: 'Bringing ramen into the classroom',
       width: 1024,
       height: 731,
     },
