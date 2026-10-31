@@ -36,7 +36,7 @@ export function Gallery() {
                 loading="lazy"
                 className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <span className="absolute inset-x-3 bottom-3 rounded-full bg-white/95 px-4 py-2 text-left text-sm font-bold text-ink shadow">
+              <span className="absolute inset-x-3 bottom-3 hidden rounded-full bg-white/95 px-4 py-2 text-left text-sm font-bold text-ink shadow md:block">
                 {photo.caption}
               </span>
             </button>

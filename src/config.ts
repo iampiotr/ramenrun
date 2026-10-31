@@ -15,15 +15,11 @@ export const IMPACT = {
   campaignYear: 2026,
 }
 
-export const CONTACT_EMAIL = 'hello@ramenforcambodia.org'
+export const CONTACT_EMAIL = 'team@ramenrun.org'
 
 export const PLEDGE_EMAIL = 'pledge@ramenrun.org'
 
-export const SOCIAL_LINKS = [
-  { label: 'Instagram', href: 'https://instagram.com/' },
-  { label: 'TikTok', href: 'https://tiktok.com/' },
-  { label: 'YouTube', href: 'https://youtube.com/' },
-]
+export const SOCIAL_LINKS = [{ label: 'YouTube', href: 'https://youtube.com/' }]
 
 export function donateHref(amountUsd?: number) {
   if (!isDonateLive || amountUsd === undefined) return DONATE_URL
