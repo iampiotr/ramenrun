@@ -151,6 +151,20 @@ export const gallery = {
       width: 1024,
       height: 576,
     },
+    {
+      src: photo('grateful.jpg'),
+      alt: 'A group of children in school uniforms stand together with their hands pressed in front of them',
+      caption: 'Kids happy and grateful',
+      width: 1024,
+      height: 576,
+    },
+    {
+      src: photo('learning.jpg'),
+      alt: 'Children sit at classroom desks, and one boy smiles while holding a marker over a worksheet',
+      caption: 'Kids learning better with full bellies',
+      width: 1024,
+      height: 576,
+    },
   ] satisfies GalleryPhoto[],
 }
 

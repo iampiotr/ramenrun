@@ -19,7 +19,7 @@ export function Gallery() {
         align="center"
       />
 
-      <ul className="grid grid-cols-2 gap-5 lg:grid-cols-4">
+      <ul className="grid grid-cols-2 gap-5 lg:grid-cols-3">
         {gallery.photos.map((photo, i) => (
           <li key={photo.src}>
             <button
