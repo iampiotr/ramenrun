@@ -110,11 +110,11 @@ export const gallery = {
       height: 848,
     },
     {
-      src: photo('06b.jpg'),
+      src: photo('06c.jpg'),
       alt: 'I stand in a helmet beside a green ATV loaded with boxes on a muddy dirt road',
       caption: 'On the road to the next village',
-      width: 1008,
-      height: 831,
+      width: 1024,
+      height: 861,
     },
     {
       src: photo('04.jpg'),
