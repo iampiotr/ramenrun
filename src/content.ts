@@ -126,7 +126,7 @@ export const gallery = {
     {
       src: photo('02c.jpg'),
       alt: 'I stand in a helmet in a schoolyard in front of a school building and the Cambodian flag',
-      caption: 'Making a stop at the school',
+      caption: 'Making a new trip at the school',
       width: 676,
       height: 1024,
     },
