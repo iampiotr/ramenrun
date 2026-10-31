@@ -100,7 +100,7 @@ export type GalleryPhoto = {
 export const gallery = {
   eyebrow: 'Siem Reap Campaign',
   title: 'Photos from the last trip',
-  intro: 'Snapshots from our most recent delivery run around Siem Reap. Tap any photo to see it larger.',
+  intro: 'Snapshots from our most recent delivery run around Siem Reap. Tap any photo to see it larger and learn more trip details.',
   photos: [
     {
       src: photo('loading4.jpg'),
