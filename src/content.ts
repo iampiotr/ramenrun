@@ -110,11 +110,11 @@ export const gallery = {
       height: 848,
     },
     {
-      src: photo('02.svg'),
-      alt: 'Kids lining up to receive ramen packets',
+      src: photo('02.jpg'),
+      alt: 'A young man hands a ramen packet to a student at a desk in a classroom',
       caption: 'The line forms fast',
-      width: 1200,
-      height: 800,
+      width: 917,
+      height: 1024,
     },
     {
       src: photo('03.svg'),
