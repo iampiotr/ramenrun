@@ -117,7 +117,7 @@ export const gallery = {
       height: 1024,
     },
     {
-      src: photo('03.jpg'),
+      src: photo('03b.jpg'),
       alt: 'A young man hands ramen packets to students seated at desks in a classroom',
       caption: 'Two packets, one big smile',
       width: 1024,
