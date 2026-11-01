@@ -11,7 +11,7 @@ const tiles = [
   { bg: 'bg-sun', box: 'col-span-1 row-span-2 lg:col-span-3' },
   { bg: 'bg-sky', box: 'col-span-1 row-span-2 lg:col-span-3' },
   { bg: 'bg-ramen', box: 'col-span-1 row-span-2 lg:col-span-2' },
-  { bg: 'bg-[#c4c4c4]', box: 'col-span-1 row-span-3 lg:col-span-2' },
+  { bg: 'bg-[#3a3a3a]', box: 'col-span-1 row-span-3 lg:col-span-2' },
   { bg: 'bg-sun', box: 'col-span-1 row-span-2 lg:col-span-2' },
   { bg: 'bg-sky', box: 'col-span-1 row-span-2 lg:col-span-2 lg:row-span-1' },
   { bg: 'bg-ramen', box: 'col-span-1 row-span-2 lg:col-span-2 lg:row-span-1' },
