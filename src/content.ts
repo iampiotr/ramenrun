@@ -197,5 +197,5 @@ export const faq = {
 
 export const finalCta = {
   title: 'Fill a bowl today',
-  body: 'Every 50 cents is one more meal for a kid in East Asia. Start with whatever you can.',
+  body: 'Every 50¢ is one more meal for a kid in East Asia. Start with whatever you can.',
 }
