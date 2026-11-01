@@ -1,8 +1,9 @@
 const photo = (file: string) => `${import.meta.env.BASE_URL}photos/siem-reap/${file}`
 
 export const site = {
-  name: 'Ramen Run USA',
-  brand: 'Ramen Run USA',
+  name: "Brandon's Ramen Run",
+  owner: "Brandon's",
+  brand: 'Ramen Run',
   tagline: 'One packet. One full belly.',
 }
 
@@ -76,9 +77,9 @@ export const drops = {
 export const bio = {
   eyebrow: 'About Brandon',
   name: 'Brandon',
-  role: 'Founder, Ramen Run USA',
+  role: "Founder, Brandon's Ramen Run",
   photo: photo('portrait.png'),
-  photoAlt: 'Portrait of Brandon, founder of Ramen Run USA',
+  photoAlt: "Portrait of Brandon, founder of Brandon's Ramen Run",
   quote: 'I saw kids sharing one bowl between four. I knew I could do something.',
   paragraphs: [
     "Hi, I'm Brandon! I started the Ramen Run after visiting Siem Reap and spending time in the villages just outside the city. The kids I met were funny, curious, and full of energy, and many of them were also hungry.",
@@ -189,7 +190,7 @@ export const faq = {
     },
     {
       q: 'Is my donation tax-deductible?',
-      a: 'Not at this time. Ramen Run USA is a personal project, not a registered charity, so donations are gifts and are not tax-deductible.',
+      a: "Not at this time. Brandon's Ramen Run is a personal project, not a registered charity, so donations are gifts and are not tax-deductible.",
     },
   ],
 }
