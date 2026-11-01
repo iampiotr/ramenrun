@@ -31,7 +31,7 @@ export function Gallery() {
         align="center"
       />
 
-      <ul className="grid auto-rows-[140px] grid-cols-2 gap-5 lg:auto-rows-[150px] lg:grid-cols-6">
+      <ul className="grid auto-rows-[140px] grid-cols-2 gap-2 lg:auto-rows-[150px] lg:grid-cols-6">
         {gallery.photos.map((photo, i) => (
           <li key={photo.src} className={tiles[i].box}>
             <button
