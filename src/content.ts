@@ -190,7 +190,7 @@ export const faq = {
     },
     {
       q: 'Is my donation tax-deductible?',
-      a: "Not at this time. Brandon's Ramen Run is a personal project, not a registered charity, so donations are gifts and are not tax-deductible.",
+      a: 'Not at this time. Ramen Run is a personal project, not a registered charity, so donations are gifts and are not tax-deductible.',
     },
   ],
 }
