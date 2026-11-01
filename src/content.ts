@@ -55,7 +55,7 @@ export const howItWorks = {
     },
     {
       title: 'We deliver it',
-      body: 'My local ambassadors or I load up and drive the food out to villages, and reach the families who need it most.',
+      body: 'My local ambassadors and I load up the food and drive it to the schools and villages that need it most.',
     },
     {
       title: 'Kids eat',
