@@ -178,7 +178,7 @@ export const faq = {
     },
     {
       q: 'How much does one packet cost?',
-      a: 'About 50 cents (roughly 2,000 riel) when bought in bulk from local markets in many East Asian countries. Prices change a little, so I update this number after each trip.',
+      a: 'About 50¢ (or ៛2,000 riel) when bought in bulk from local markets in many East Asian countries. Prices change a little, so I update this number after each trip.',
     },
     {
       q: 'How do you choose which villages to visit?',
