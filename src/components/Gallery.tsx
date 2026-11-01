@@ -7,11 +7,11 @@ import 'yet-another-react-lightbox/styles.css'
 import { Section, SectionHeading } from './Section'
 import { gallery } from '../content'
 
-const tiles = [
+const tiles: { bg: string; box: string; color?: boolean }[] = [
   { bg: 'bg-sun', box: 'col-span-1 row-span-2 lg:col-span-3' },
   { bg: 'bg-sky', box: 'col-span-1 row-span-2 lg:col-span-3' },
   { bg: 'bg-ramen', box: 'col-span-1 row-span-2 lg:col-span-2' },
-  { bg: 'bg-brand', box: 'col-span-1 row-span-3 lg:col-span-2' },
+  { bg: 'bg-brand', box: 'col-span-1 row-span-3 lg:col-span-2', color: true },
   { bg: 'bg-sun', box: 'col-span-1 row-span-2 lg:col-span-2' },
   { bg: 'bg-sky', box: 'col-span-1 row-span-2 lg:col-span-2 lg:row-span-1' },
   { bg: 'bg-ramen', box: 'col-span-1 row-span-2 lg:col-span-2 lg:row-span-1' },
@@ -46,7 +46,7 @@ export function Gallery() {
                 width={photo.width}
                 height={photo.height}
                 loading="lazy"
-                className="h-full w-full object-contain grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0 group-focus-visible:grayscale-0"
+                className={`h-full w-full object-contain transition duration-500 group-hover:scale-105 ${tiles[i].color ? '' : 'grayscale group-hover:grayscale-0 group-focus-visible:grayscale-0'}`}
               />
               <span className="absolute inset-x-3 bottom-3 hidden rounded-full bg-white/95 px-4 py-2 text-left text-sm font-bold text-ink shadow md:block">
                 {photo.caption}
