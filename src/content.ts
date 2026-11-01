@@ -77,7 +77,7 @@ export const drops = {
 export const bio = {
   eyebrow: 'About Brandon',
   name: 'Brandon',
-  role: 'Founder, Ramen Run',
+  role: 'Founder, Ramen Run USA',
   photo: photo('portrait.png'),
   photoAlt: "Portrait of Brandon, founder of Brandon's Ramen Run",
   quote: 'I saw kids sharing one bowl between four. I knew I could do something.',
