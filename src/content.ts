@@ -145,11 +145,11 @@ export const gallery = {
       height: 614,
     },
     {
-      src: photo('05d.jpg'),
-      alt: 'One of my favorite moments was seeing a family sitting together and enjoying the ramen we delivered. It was nice knowing that something so simple could help.',
-      caption: 'Enjoying a meal at home',
-      width: 1024,
-      height: 685,
+      src: photo('05e.jpg'),
+      alt: 'I ensured no student is missed and every student gets one.',
+      caption: 'No one gets missed',
+      width: 1016,
+      height: 1024,
     },
     {
       src: photo('grateful2.jpg'),
