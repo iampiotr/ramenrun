@@ -138,11 +138,11 @@ export const gallery = {
       height: 731,
     },
     {
-      src: photo('07.jpg'),
-      alt: 'We also stopped by a preschool to meet the younger kids. They were really curious about us, and it was cool seeing all their smiles.',
-      caption: 'Visiting the preschool',
+      src: photo('grateful2.jpg'),
+      alt: 'We met so many kids during the trip. Even though we didn\'t speak the same language, everyone was really friendly, and we had a great time.',
+      caption: 'The kids we met',
       width: 1024,
-      height: 614,
+      height: 576,
     },
     {
       src: photo('05e.jpg'),
@@ -152,11 +152,11 @@ export const gallery = {
       height: 1024,
     },
     {
-      src: photo('grateful2.jpg'),
-      alt: 'We met so many kids during the trip. Even though we didn\'t speak the same language, everyone was really friendly, and we had a great time.',
-      caption: 'The kids we met along the way',
+      src: photo('07.jpg'),
+      alt: 'We also stopped by a preschool to meet the younger kids. They were really curious about us, and it was cool seeing all their smiles.',
+      caption: 'Visiting the preschool',
       width: 1024,
-      height: 576,
+      height: 614,
     },
     {
       src: photo('learning.jpg'),
