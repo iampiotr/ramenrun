@@ -9,9 +9,9 @@ export const COST_PER_PACKET_USD = 0.5
 export const GIFT_AMOUNTS_USD = [10, 25, 50, 100]
 
 export const IMPACT = {
-  packetsDelivered: 2400,
+  packetsDelivered: 326,
   villagesReached: 6,
-  kidsFed: 800,
+  kidsFed: 300,
   campaignYear: 2026,
 }
 
