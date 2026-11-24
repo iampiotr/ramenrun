@@ -10,7 +10,7 @@ export const GIFT_AMOUNTS_USD = [10, 25, 50, 100]
 
 export const IMPACT = {
   packetsDelivered: 326,
-  villagesReached: 6,
+  villagesReached: 4,
   kidsFed: 300,
   campaignYear: 2026,
 }
